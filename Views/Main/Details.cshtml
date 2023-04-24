@@ -1,0 +1,120 @@
+﻿@model Online_Recipe_Website.Models.RecipeModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<head>
+    <style>
+        .badge {
+            font-size:15px;
+            border-radius:8px;
+        }
+    </style>
+</head>
+<div>
+    <h1 style="text-align:center">@Model.title 
+        @if(@Model.category.Equals("Non Veg")){
+        <span class="badge bg-danger">@Model.category</span>
+        }
+        else{
+        <span class="badge bg-success">@Model.category</span>
+        }
+        <span class="badge bg-info text-dark">@Model.cuisine</span>
+        <span class="badge bg-dark">@Model.difficulty_level</span>
+        <span class="badge bg-warning text-dark">@Model.cooking_time</span>
+    
+    </h2>
+    <p style="text-align:center">Author: @Model.email</p>
+    <hr />
+        <img style="display:block;width:350px;height:350px; margin:auto" src="@Model.image_url" />
+    <h3>Description</h3>
+    <p>@Model.description</p>
+    <h3>Ingredients</h3>
+    <ul>
+        @foreach (var ingredient in Model.ingredients.Split('\n'))
+        {
+                if (!string.IsNullOrWhiteSpace(ingredient))
+                {
+                    <li>@ingredient</li>
+                }
+                
+        }
+    </ul>
+    <h3>Instructions</h3>
+    <ul>
+        @foreach (var instruction in Model.instruction.Split('.'))
+        {
+                if (!string.IsNullOrWhiteSpace(instruction))
+                {
+                    <li>@instruction</li>
+                }
+        }
+    </ul>
+
+    @*<dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.image_url)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.image_url)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ingredients)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ingredients)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.instruction)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.instruction)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.category)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.difficulty_level)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.difficulty_level)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cuisine)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cuisine)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cooking_time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cooking_time)
+        </dd>
+    </dl>*@
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model?.recipe_id">Edit</a> |*@
+    <a asp-action="Index">Back to List</a>
+</div>
