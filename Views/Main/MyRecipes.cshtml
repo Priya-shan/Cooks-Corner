@@ -1,0 +1,131 @@
+﻿@model IEnumerable<Online_Recipe_Website.Models.RecipeModel>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+
+<head>
+    <style>
+        .badge {
+            font-size: 13px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+@*
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.image_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ingredients)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.instruction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.difficulty_level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cuisine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cooking_time)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>*@
+
+<h2 style="text-align:center">My Recipes</h2>
+<hr />
+<br />
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 20rem; margin-right:30px">
+            <img src=@item.image_url class="card-img-top" alt="..." style="width:250px;display:block;margin:auto;height:200px">
+            <div class="card-body">
+                <h5 class="card-title">
+                    @item.title
+                    @if (@item.category.Equals("Non Veg"))
+                    {
+                        <span class="badge bg-danger">@item.category</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">@item.category</span>
+                    }
+                    <span class="badge bg-dark">@item.difficulty_level</span>
+                </h5>
+                <p class="card-text">@item.description.Substring(0,100)...</p>
+                <a asp-action="Details" style="margin-right:20px" class="btn btn-primary" asp-route-id="@item.recipe_id">View Details</a>
+                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.recipe_id">Edit Recipe</a>
+
+            </div>
+        </div>
+
+    }
+
+</div>
+@* <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.image_url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ingredients)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.instruction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.difficulty_level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuisine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cooking_time)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.recipe_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.recipe_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.recipe_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
