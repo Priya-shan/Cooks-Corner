@@ -6,13 +6,13 @@
 @if (SignInManager.IsSignedIn(User))
 {
    <li class="nav-item">
-      <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Explore</a>
+      <a class="nav-link text-dark" asp-area="" asp-controller="Main" asp-action="Index">Explore</a>
    </li>
    <li class="nav-item">
-      <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Add Recipe</a>
+      <a class="nav-link text-dark" asp-area="" asp-controller="Main" asp-action="Create">Add Recipe</a>
    </li>
    <li class="nav-item">
-      <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">My Recipies</a>
+      <a class="nav-link text-dark" asp-area="" asp-controller="Main" asp-action="MyRecipes">My Recipies</a>
    </li>
         @*@User.Identity?.Name!*@
     <li class="nav-item">
