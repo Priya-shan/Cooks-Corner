@@ -1,0 +1,102 @@
+﻿@model Online_Recipe_Website.Models.RecipeModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>RecipeModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <input type="hidden" asp-for="email" class="form-control" value=@User.Identity?.Name />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Title</label>
+                <input asp-for="title" class="form-control" />
+                <span asp-validation-for="title" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label">Enter your Recipe Image Url
+                    <span> ( If you leave this empty a standard image would be applied )</span>
+                </label>
+                <input asp-for="image_url" class="form-control" />
+                <span asp-validation-for="image_url" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label">Description</label>
+                <textarea asp-for="description" style="width:1120px;height:auto" name="description">
+                </textarea>
+                @*<input type="text-area" asp-for="description" class="form-control" />*@
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label lass="control-label">Ingredients (Space Seperated)</label>
+                <textarea asp-for="ingredients" style="width:1120px;height:auto" name="ingredients">
+                </textarea>
+                <span asp-validation-for="ingredients" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label">Instruction</label>
+                @*<input asp-for="instruction" class="form-control" />*@
+                <textarea asp-for="instruction" style="width:1120px;height:auto" name="instruction">
+                </textarea>
+                <span asp-validation-for="instruction" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label">Category</label>
+                <select asp-for="category" class="form-control">
+                    <option value="Veg">Veg</option>
+                    <option value="Non-Veg">Non Veg</option>
+                </select>
+                <span asp-validation-for="category" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label">Difficulty Level</label>
+                <select asp-for="difficulty_level" class="form-control">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+                <span asp-validation-for="difficulty_level" class="text-danger"></span>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <label class="control-label">Cusine</label>
+                <input asp-for="cuisine" class="form-control" />
+                <span asp-validation-for="cuisine" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label class="control-label">Cooking Time</label>
+                <input asp-for="cooking_time" class="form-control" />
+                <span asp-validation-for="cooking_time" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
