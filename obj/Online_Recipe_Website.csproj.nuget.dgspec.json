@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\Online_Recipe_Website\\Online_Recipe_Website.csproj": {}
+    "C:\\Users\\HP\\source\\Online_Recipe_Website\\Online_Recipe_Website.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\Online_Recipe_Website\\Online_Recipe_Website.csproj": {
+    "C:\\Users\\HP\\source\\Online_Recipe_Website\\Online_Recipe_Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Online_Recipe_Website\\Online_Recipe_Website.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\source\\Online_Recipe_Website\\Online_Recipe_Website.csproj",
         "projectName": "Online_Recipe_Website",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\Online_Recipe_Website\\Online_Recipe_Website.csproj",
+        "projectPath": "C:\\Users\\HP\\source\\Online_Recipe_Website\\Online_Recipe_Website.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\Online_Recipe_Website\\obj\\",
+        "outputPath": "C:\\Users\\HP\\source\\Online_Recipe_Website\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
