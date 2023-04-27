@@ -1,9 +1,9 @@
-## Cooks-Corner - An Online Recipe Website
+# Cooks-Corner - An Online Recipe Website
 
-# Description 
+## Description 
 Cooks Corner is an online recipe website which is a platform for food enthusiasts to share and discover new recipes. Users can create an account and login to access a wide variety of recipes uploaded by other users. They can browse through the recipes by category, cuisine, and difficulty lever. It also include features such as a search function to help users find specific recipes. Additionally, users can contribute to the website by adding their own recipes. They can upload photos, write detailed descriptions, and provide step-by-step instructions for others to follow. Overall, this website provides a community-driven platform for food lovers to discover, share, and experiment with new and exciting recipes.
 
-# Application Screenshots
+## Application Screenshots
 
 REGISTER
 
